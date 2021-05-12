@@ -14,13 +14,11 @@ spring:
     poolMaxTotal: 1000
     poolMaxIdle: 500
     poolMaxWait: 500
-
 server:
   port: 8502
 feign:
   hystrix:
     enabled: true
-
 eureka:
   instance:
     hostname: 127.0.0.1
