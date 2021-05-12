@@ -1,0 +1,57 @@
+spring:
+  application:
+    name: itoken-service-sso
+  zipkin:
+    base-url: http://127.0.0.1:9411
+  boot:
+    admin:
+      client:
+        url: http://127.0.0.1:8084
+  thymeleaf:
+    cache:  false
+    mode: LEGACYHTML5
+    encoding: UTF-8
+    servlet:
+      content-type: text/html
+  datasource:
+    username: alu
+    password: Lly@486597
+    url: jdbc:mysql://180.76.156.167:3306/world?useUnicode=true&characterEncoding=utf-8&useSSL=false
+    driver-class-name: com.mysql.cj.jdbc.Driver
+ #   type: com.alibaba.druid.pool.DruidDataSource
+    # 下面为连接池的补充设置，应用到上面所有数据源中
+    # 初始化大小，最小，最大
+    initial-size: 5
+    min-idle: 5
+    max-active: 20
+
+
+server:
+  port: 8503
+  
+eureka:
+  instance:
+    hostname: 127.0.0.1
+  client:
+    fetch-registry: true
+    register-with-eureka: true
+    service-url:
+      defaultZone: http://127.0.0.1:8761/eureka,http://127.0.0.1:8861/eureka,http://127.0.0.1:8961/eureka
+      
+management: 
+  endpoint:
+    health: 
+      show-details: always
+  endpoints: 
+    web:
+      exposure:
+        include: health,info  
+
+mybatis:
+  type-aliases-package: com.alu.itoken.common.domain
+  mapper-location:
+    classpath: mapper/*.xml  
+feign:
+  hystrix:
+    enabled: true 
+  

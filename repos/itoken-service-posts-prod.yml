@@ -1,0 +1,19 @@
+spring:
+  application:
+    name: itoken-service-posts
+  datasource:
+    username: root
+    password: 123456
+    url: jdbc:mysql://127.0.0.1:3308/classicmodels?useUnicode=true&characterEncoding=utf-8&useSSL=false
+    driver-class-name: com.mysql.cj.jdbc.Driver
+ #   type: com.alibaba.druid.pool.DruidDataSource
+    # 下面为连接池的补充设置，应用到上面所有数据源中
+    # 初始化大小，最小，最大
+    initial-size: 5
+    min-idle: 5
+    max-active: 20
+
+server:
+  port: 8504
+  
+

@@ -1,0 +1,15 @@
+spring:
+  application:
+    name: itoken-service-upload
+  
+
+server:
+  port: 8505
+  
+fastdfs.base.url: http://120.27.94.150:8888/
+storage:
+  type: fastdfs
+  fastdfs:
+    tracker_server: 120.27.94.150:22122
+  
+

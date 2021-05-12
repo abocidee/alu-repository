@@ -1,0 +1,21 @@
+spring:
+  application:
+    name: alu-eureka
+  zipkin:
+    base-url: 127.0.0.1:9411
+  boot:
+    admin:
+      client:
+        url: 127.0.0.1:8084
+
+server:
+  port: 8761
+  
+eureka:
+  instance:
+    hostname: 127.0.0.1
+  client:
+    fetch-registry: true
+    register-with-eureka: true
+    service-url:
+      defaultZone: 127.0.0.1:8761/eureka
