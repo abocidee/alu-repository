@@ -11,10 +11,9 @@ spring:
     host: 127.0.0.1
     port: 6379
     timeout: 1000
-    pool:
-      max-active: 10000
-      max-idle: 10
-      max-wait: 100000
+    poolMaxTotal: 100
+    poolMaxIdle: 10
+    poolMaxWait: 100000
 server:
   port: 8502
 feign:
